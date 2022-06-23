@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "k8sccluster-1dea"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "k8sccluster-1dea"
+  template:
+    metadata:
+      labels:
+        app: "k8sccluster-1dea"
+    spec:
+      containers:
+        - name: "k8sccluster-1dea"
+          image: "k8sregistrymax.azurecr.io/k8sccluster"
+          ports:
+          - containerPort: 8080
