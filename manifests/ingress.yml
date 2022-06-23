@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "k8sccluster-db8b"
+    labels:
+        app: "k8sccluster-db8b"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: default-k8sccluster-db8b.b13bac32bb154a4abd76.eastus.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "k8sccluster-db8b"
+                servicePort: 8080
