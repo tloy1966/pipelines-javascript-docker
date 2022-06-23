@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "k8sccluster-2025"
+    labels:
+        app: "k8sccluster-2025"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: k8sc_clusteraff4-k8sccluster-2025.b13bac32bb154a4abd76.eastus.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "k8sccluster-2025"
+                servicePort: 8080
