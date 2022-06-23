@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "k8sccluster-db8b"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "k8sccluster-db8b"
+  template:
+    metadata:
+      labels:
+        app: "k8sccluster-db8b"
+    spec:
+      containers:
+        - name: "k8sccluster-db8b"
+          image: "k8sregistrymax.azurecr.io/k8sccluster"
+          ports:
+          - containerPort: 8080
